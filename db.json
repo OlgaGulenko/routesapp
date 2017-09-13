@@ -1,0 +1,254 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "login@example.com",
+      "password": "qwerty"
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "email": "sdas",
+      "password": "dsad",
+      "id": 6
+    },
+    {
+      "email": "gffh",
+      "password": "ghgg",
+      "id": 7
+    },
+    {
+      "email": "hhh",
+      "password": "hhh",
+      "id": 8
+    },
+    {
+      "email": "qwerty",
+      "password": "qwerty",
+      "id": 9
+    },
+    {
+      "email": "nbmh",
+      "password": "mnmn",
+      "id": 10
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Walk"
+    },
+    {
+      "id": 2,
+      "name": "Bike"
+    },
+    {
+      "id": 3,
+      "name": "Other"
+    }
+  ],
+  "routes": [
+    {
+      "id": 1,
+      "name": "Awesome route",
+      "description": "desc",
+      "categoryId": 1,
+      "length": 50.5,
+      "route": [
+        {
+          "lat": 40.13123,
+          "lng": 56.52342
+        },
+        {
+          "lat": 49.25422,
+          "lng": 32.03432
+        },
+        {
+          "lat": 40.13123,
+          "lng": 56.52342
+        }
+      ],
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "Awes route",
+      "description": "desc",
+      "categoryId": 1,
+      "length": 50.5,
+      "route": [
+        {
+          "lat": 45.13123,
+          "lng": 56.52342
+        },
+        {
+          "lat": 47.25422,
+          "lng": 32.03432
+        },
+        {
+          "lat": 40.13123,
+          "lng": 56.52342
+        }
+      ],
+      "userId": 1
+    },
+    {
+      "name": "qwerty",
+      "description": "qwert",
+      "categories": [
+        {
+          "id": 1,
+          "name": "Walk"
+        },
+        {
+          "id": 2,
+          "name": "Bike"
+        },
+        {
+          "id": 3,
+          "name": "Other"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "name": "qwerty",
+      "description": "qwert",
+      "categories": [
+        {
+          "id": 1,
+          "name": "Walk"
+        },
+        {
+          "id": 2,
+          "name": "Bike"
+        },
+        {
+          "id": 3,
+          "name": "Other"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "name": "qwerty",
+      "description": "qwert",
+      "categories": [
+        {
+          "id": 1,
+          "name": "Walk"
+        },
+        {
+          "id": 2,
+          "name": "Bike"
+        },
+        {
+          "id": 3,
+          "name": "Other"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "name": "qwerty",
+      "description": "qwert",
+      "categories": [
+        {
+          "id": 1,
+          "name": "Walk"
+        },
+        {
+          "id": 2,
+          "name": "Bike"
+        },
+        {
+          "id": 3,
+          "name": "Other"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "name": "qwerty",
+      "description": "qwert",
+      "categories": [
+        {
+          "id": 1,
+          "name": "Walk"
+        },
+        {
+          "id": 2,
+          "name": "Bike"
+        },
+        {
+          "id": 3,
+          "name": "Other"
+        }
+      ],
+      "id": 7
+    },
+    {
+      "name": "qwerty",
+      "description": "qwert",
+      "categories": [
+        {
+          "id": 1,
+          "name": "Walk"
+        },
+        {
+          "id": 2,
+          "name": "Bike"
+        },
+        {
+          "id": 3,
+          "name": "Other"
+        }
+      ],
+      "id": 8
+    },
+    {
+      "name": "",
+      "description": "",
+      "categories": [
+        {
+          "id": 1,
+          "name": "Walk"
+        },
+        {
+          "id": 2,
+          "name": "Bike"
+        },
+        {
+          "id": 3,
+          "name": "Other"
+        }
+      ],
+      "id": 9
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "description": "desc",
+      "rating": 7,
+      "userId": 1
+    }
+  ],
+  "favorites": [
+    {
+      "id": 1,
+      "userId": 1,
+      "routeId": 1
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "login@example.com",
+      "password": "qwerty"
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "email": "sdas",
+      "password": "dsad",
+      "id": 6
+    },
+    {
+      "email": "gffh",
+      "password": "ghgg",
+      "id": 7
+    },
+    {
+      "email": "hhh",
+      "password": "hhh",
+      "id": 8
+    },
+    {
+      "email": "qwerty",
+      "password": "qwerty",
+      "id": 9
+    },
+    {
+      "email": "nbmh",
+      "password": "mnmn",
+      "id": 10
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "category 1"
+    }
+  ],
+	"routes": [
+		{
+			"id": 1,
+			"name": "Awesome route",
+			"description": "desc",
+			"categoryId": 1,
+			"length": 50.5,
+			"route": [
+				{ "lat": 40.13123, "lng": 56.52342  },
+				{ "lat": 40.13123, "lng": 56.52342  },
+				{ "lat": 40.13123, "lng": 56.52342  }
+			],
+			"userId": 1
+		}
+	],
+	"comments": [
+		{
+			"id": 1,
+			"description": "desc",
+			"rating": 7,
+			"userId": 1
+		}
+	],
+
+  "favorites": [
+    {
+      "id": 1,
+      "userId": 1,
+      "routeId": 1
+    }
+  ]
+}
