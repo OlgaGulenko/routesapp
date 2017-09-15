@@ -41,6 +41,11 @@
       "email": "nbmh",
       "password": "mnmn",
       "id": 10
+    },
+    {
+      "email": "zxcvb",
+      "password": "bvcxz",
+      "id": 11
     }
   ],
   "categories": [
@@ -63,7 +68,7 @@
       "name": "Awesome route",
       "description": "desc",
       "categoryId": 1,
-      "length": 50.5,
+      "length": 50555,
       "route": [
         {
           "lat": 40.13123,
@@ -85,7 +90,7 @@
       "name": "Awes route",
       "description": "desc",
       "categoryId": 1,
-      "length": 50.5,
+      "length": 50555,
       "route": [
         {
           "lat": 45.13123,
@@ -103,137 +108,43 @@
       "userId": 1
     },
     {
+      "id": 3,
       "name": "qwerty",
-      "description": "qwert",
-      "categories": [
+      "description": "desgfgfgc",
+      "categoryId": 2,
+      "length": 50555,
+      "route": [
         {
-          "id": 1,
-          "name": "Walk"
+          "lat": 45.13123,
+          "lng": 56.52342
         },
         {
-          "id": 2,
-          "name": "Bike"
+          "lat": 47.25422,
+          "lng": 32.03432
         },
         {
-          "id": 3,
-          "name": "Other"
+          "lat": 40.13123,
+          "lng": 56.52342
         }
       ],
-      "id": 3
+      "userId": 2
     },
     {
-      "name": "qwerty",
-      "description": "qwert",
-      "categories": [
+      "name": "erghj",
+      "description": "qwepoiuytre",
+      "length": 1952601.274555162,
+      "route": [
         {
-          "id": 1,
-          "name": "Walk"
+          "lat": 59.5343180010956,
+          "lng": 49.39453125
         },
         {
-          "id": 2,
-          "name": "Bike"
-        },
-        {
-          "id": 3,
-          "name": "Other"
+          "lat": 47.39834920035926,
+          "lng": 71.015625
         }
       ],
+      "categories": 3,
       "id": 4
-    },
-    {
-      "name": "qwerty",
-      "description": "qwert",
-      "categories": [
-        {
-          "id": 1,
-          "name": "Walk"
-        },
-        {
-          "id": 2,
-          "name": "Bike"
-        },
-        {
-          "id": 3,
-          "name": "Other"
-        }
-      ],
-      "id": 5
-    },
-    {
-      "name": "qwerty",
-      "description": "qwert",
-      "categories": [
-        {
-          "id": 1,
-          "name": "Walk"
-        },
-        {
-          "id": 2,
-          "name": "Bike"
-        },
-        {
-          "id": 3,
-          "name": "Other"
-        }
-      ],
-      "id": 6
-    },
-    {
-      "name": "qwerty",
-      "description": "qwert",
-      "categories": [
-        {
-          "id": 1,
-          "name": "Walk"
-        },
-        {
-          "id": 2,
-          "name": "Bike"
-        },
-        {
-          "id": 3,
-          "name": "Other"
-        }
-      ],
-      "id": 7
-    },
-    {
-      "name": "qwerty",
-      "description": "qwert",
-      "categories": [
-        {
-          "id": 1,
-          "name": "Walk"
-        },
-        {
-          "id": 2,
-          "name": "Bike"
-        },
-        {
-          "id": 3,
-          "name": "Other"
-        }
-      ],
-      "id": 8
-    },
-    {
-      "name": "",
-      "description": "",
-      "categories": [
-        {
-          "id": 1,
-          "name": "Walk"
-        },
-        {
-          "id": 2,
-          "name": "Bike"
-        },
-        {
-          "id": 3,
-          "name": "Other"
-        }
-      ],
-      "id": 9
     }
   ],
   "comments": [
@@ -242,6 +153,81 @@
       "description": "desc",
       "rating": 7,
       "userId": 1
+    },
+    {
+      "rating": 1,
+      "description": "",
+      "id": 2
+    },
+    {
+      "rating": 1,
+      "description": "",
+      "id": 3
+    },
+    {
+      "rating": 1,
+      "description": "",
+      "id": 4
+    },
+    {
+      "rating": 1,
+      "description": "sdfgh",
+      "id": 5
+    },
+    {
+      "rating": 8,
+      "description": "234",
+      "id": 6
+    },
+    {
+      "rating": 2,
+      "description": "hj",
+      "id": 7
+    },
+    {
+      "rating": "",
+      "description": "",
+      "id": 8
+    },
+    {
+      "rating": 4,
+      "description": "gjk",
+      "id": 9
+    },
+    {
+      "rating": 4,
+      "description": "sdfg",
+      "id": 10
+    },
+    {
+      "rating": 3,
+      "description": "dfghjkl",
+      "id": 11
+    },
+    {
+      "rating": 2,
+      "description": "sdfg",
+      "id": 12
+    },
+    {
+      "rating": 10,
+      "description": "wertyuio",
+      "id": 13
+    },
+    {
+      "rating": 5,
+      "description": "dfghj",
+      "id": 14
+    },
+    {
+      "rating": 6,
+      "description": "very",
+      "id": 15
+    },
+    {
+      "rating": 9,
+      "description": "qwertyuiop",
+      "id": 16
     }
   ],
   "favorites": [

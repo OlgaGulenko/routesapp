@@ -67,7 +67,7 @@ class WalkRoutes extends Component{
         return (
           <li key={index}>
             <strong><h2>{route.name}</h2></strong><br/>
-            <strong><h4>Length:</h4>{route.length}</strong><br/>
+            <strong><h4>Length:</h4>{Math.round((route.length)/1000)}km</strong><br/>
             <h4>Description:</h4>{route.description}
           </li>
         )

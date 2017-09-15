@@ -123,6 +123,16 @@ body{
   background-color: rgba(0,0,0,0.7);
   color: rgba(255, 255, 255, 0.9)
 }
+.comment{
+  width: 80%;
+  background-color: rgba(255,255,255,0);
+  color: rgba(255, 255, 255, 0.9)
+}
+.lastcomments{
+  width: 80%;
+  background-color: rgba(255,255,255,0);
+  color: rgba(255, 255, 255, 0.9)
+}
 /* MOBILE*/
 
 @media screen and (max-width: 600px) {
