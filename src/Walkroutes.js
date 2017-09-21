@@ -34,7 +34,7 @@ class WalkRoutes extends Component{
       ],
       categoryId:'',
       routeId:'',
-      filterByFavorites: true,
+      filterByFavorites: false,
       /*refresh:[]*/
     };
   }
@@ -114,6 +114,7 @@ class WalkRoutes extends Component{
   ToggleFilterByFavorites(){
     this.setState({ filterByFavorites: !this.state.filterByFavorites });
   }
+
     render() {
 
       const list = this.FilterByFavorites(this.findRoute(this.Filterbylength(this.FilterbyCategory()))).map((route, index) => {

@@ -52,7 +52,7 @@ export const Navigation = () => {
                  <li><Link to={`/`} className="active">Walk routes</Link></li>
                  <li><Link to={`/routes`} className="">Create Route</Link></li>
                  <li><Link to={`/routes/1`} className="">Pageroute</Link></li>
-                 <li><Link to={`/users/`} className="">My account</Link></li>
+                 <li><Link to={`/users/${localStorage.getItem('id')}`} className="">My account</Link></li>
                  <li><Link to={`/registration/`} className="">Registration</Link></li>
                  { localStorage.getItem('id') ? (
                    <li><a to={`/logout/`} onClick={Logout} className="">Logout</a></li>
@@ -68,6 +68,7 @@ export const Navigation = () => {
      </Grid>
   )
 };
+
 
 ReactDOM.render(
   <Provider store={store}>
