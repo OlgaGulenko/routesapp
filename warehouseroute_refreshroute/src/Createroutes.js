@@ -282,7 +282,9 @@ componentDidMount(){
                   <ButtonToolbar>
                     <Button bsStyle="primary" bsSize="large" active onClick={this.Createroutes.bind(this)}>Create route</Button>
                   </ButtonToolbar>
-
+                  <ButtonToolbar>
+                    <Button bsStyle="primary" bsSize="large" active onClick={this.Refreshroutes.bind(this)}>Refreshroutes</Button>
+                  </ButtonToolbar>
                 </div>
               </Col>
             </Row>

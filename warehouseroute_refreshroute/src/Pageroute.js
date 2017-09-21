@@ -225,7 +225,7 @@ class Pageroutes extends Component {
                             <Button bsStyle="primary" bsSize="large" active onClick={this.deleteFavorite.bind(this)}>Delete favorite</Button>
                           </ButtonToolbar>
                           <ButtonToolbar>
-                            <Button bsStyle="primary" bsSize="large" active onClick={() => store.dispatch(push('/refreshroute/' + this.state.route.id))}>Refresh route</Button>
+                            <Button bsStyle="primary" bsSize="large" active onClick={() => store.dispatch(push('refreshroute/' + this.state.route.id))}>Refresh route</Button>
                           </ButtonToolbar>
                         </div>
 

@@ -159,37 +159,7 @@ Createroutes(){
     })
   })
 }
-/*Refreshroutes(){
-  let route = this.positions.map((position) => {
-    return position
-  })
 
-  let rou = JSON.stringify({
-    name:this.state.name ,
-    description: this.state.description,
-    length: this.state.length,
-    route: route,
-    categories:this.state.categoryid,
-    userId: Number(localStorage.getItem('id')),
-  })
-  fetch( 'http://localhost:5000/routes/', {method:'patch', body:rou, headers: {'Content-Type': 'application/json'}} )
-
-  .then(response => response.json())
-  .then(response => {
-    console.log(response)
-    this.setState ({
-      routes: response
-    })
-  })
-}
-$.ajax('http://jsonplaceholder.typicode.com/posts/1', {
-  method: 'PATCH',
-  data: {
-    title: 'foo'
-  }
-}).then(function(data) {
-  console.log(data);
-});*/
 componentDidMount(){
   GoogleMapsLoader.load(function(google) {
     this.google = google;
@@ -282,7 +252,6 @@ componentDidMount(){
                   <ButtonToolbar>
                     <Button bsStyle="primary" bsSize="large" active onClick={this.Createroutes.bind(this)}>Create route</Button>
                   </ButtonToolbar>
-
                 </div>
               </Col>
             </Row>

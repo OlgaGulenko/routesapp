@@ -49,13 +49,11 @@ class WalkRoutes extends Component{
 
       });
     })
-
-    this.Favorites();
   }
 
   findRoute(list){
     if(this.state.search==="") return list;
-    /*console.log(this.state.search)*/
+    console.log(this.state.search)
     return list.filter(route =>
       route.name && route.description && (route.name.indexOf(this.state.search) >= 0 || route.description.indexOf(this.state.search) >= 0)
     )
@@ -80,14 +78,14 @@ class WalkRoutes extends Component{
             this.setState({
               favorites: response
             });
-            /*console.log(response);*/
+            console.log(response);
         });
 
     }
 
   Filterbylength(list = []){
     if(this.state.filterlength ==='') return list;
-    /*console.log(this.state.filterlength)*/
+    console.log(this.state.filterlength)
     return list.filter(rout => {
       return rout.length >= Number(this.state.filterlength);
     })
@@ -103,23 +101,32 @@ class WalkRoutes extends Component{
   }
 
   FilterByFavorites(list){
-    if(!this.state.filterByFavorites || localStorage.getItem('id') === null ) return list;
-    console.log(list)
+    if(!this.state.filterByFavorites) return this.state.routes;
       return list.filter(route => {
-
         return this.state.favorites.find(favor => favor.routeId === route.id);
       })
   }
-
-  ToggleFilterByFavorites(){
-    this.setState({ filterByFavorites: !this.state.filterByFavorites });
-  }
+  /*FilterByFavorites(){
+    if(this.state.filterByFavorites !== true) return this.state.routes;
+    console.log(this.state.filterByFavorites)
+    return this.state.routes.filter(route => {
+    console.log(this.state.filterByFavorites, route.routeId)
+      return this.state.favorites.find(favor => favor.routeId === route.id);
+    })
+  }*/
+  /*Filterbyfavorites(){
+    if(this.state.filterbyfavorites==='') return this.state.routes;
+    console.log(this.state.filterbyfavorites)
+    return this.state.favorites.filter(rou => {
+      return rou.favorites.routeId == this.state.filterbyfavorites;
+    });
+  }*/
     render() {
 
-      const list = this.FilterByFavorites(this.findRoute(this.Filterbylength(this.FilterbyCategory()))).map((route, index) => {
+      const list = this.findRoute(this.FilterByFavorites(this.Filterbylength(this.FilterbyCategory()))).map((route, index) => {
         return (
           <li key={index}>
-            <Link to = {"/routes/"+route.id}><strong><h2>{route.name}</h2></strong></Link><br/>
+            <strong><h2>{route.name}</h2></strong><br/>
             <strong><h4>Length:</h4>{Math.round((route.length)/1000)}km</strong><br/>
             <h4>Description:</h4>{route.description}
           </li>
@@ -158,7 +165,7 @@ class WalkRoutes extends Component{
                     )) }
                   </SplitButton>
                   <ButtonToolbar>
-                    <Button bsStyle="primary" bsSize="large" active onClick={this.ToggleFilterByFavorites.bind(this)}>My favorit routes</Button>
+                    <Button bsStyle="primary" bsSize="large" active onClick={this.FilterByFavorites.bind(this)}>My favorit routes</Button>
                   </ButtonToolbar>
                 </FormGroup>
               </div>
@@ -167,9 +174,11 @@ class WalkRoutes extends Component{
           <Row className="show-grid">
             <Col md={12} lg={12} sm={12} xs={12}>
               <div className="routeslist">
+
                 <ul>
                   { list }
                 </ul>
+
               </div>
             </Col>
           </Row>

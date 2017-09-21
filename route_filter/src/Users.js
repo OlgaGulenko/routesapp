@@ -23,6 +23,7 @@ class Users extends Component {
       this.setState ({
         user: response
       });
+      console.log(response)
     })
   }
   render() {
@@ -48,4 +49,5 @@ class Users extends Component {
     );
   }
 }
+
 export default Users;

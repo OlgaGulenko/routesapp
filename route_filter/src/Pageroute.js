@@ -4,10 +4,6 @@ import {Navigation} from "./index";
 import { Button, Navbar, NavItem, Nav, Grid, Row, Col, ButtonToolbar, FormGroup, FormControl, MenuItem, SplitButton, ControlLabel } from 'react-bootstrap';
 import GoogleMapsLoader from 'google-maps';
 import Authorization from './Authorization';
-import Refreshroutes from './Refreshroute';
-import { Link } from 'react-router-dom';
-import { push } from 'react-router-redux';
-import { store } from './index';
 
 GoogleMapsLoader.KEY = 'AIzaSyB5B2eh46YKpFNNN7e-EaeEykAahyoNOuQ';
 GoogleMapsLoader.LIBRARIES = ['geometry', 'places'];
@@ -29,10 +25,8 @@ class Pageroutes extends Component {
       comments:[],
       favorites:[],
       routes:[],
-      id: '',
 
     };
-
   }
   componentDidMount(){
 
@@ -65,7 +59,7 @@ class Pageroutes extends Component {
               lat: route.lat,
               lng: route.lng
             };
-
+          console.log(position);
           new this.google.maps.Marker({
             position: position,
             map: this.map,
@@ -74,8 +68,6 @@ class Pageroutes extends Component {
 
           this.GetComments();
           this.Getusersroutes();
-          this.GetFavorites();
-
       })
     })
     }.bind(this));
@@ -117,15 +109,6 @@ class Pageroutes extends Component {
       })
     })
   }
-  GetFavorites(){
-    fetch('http://localhost:5000/favorites/', {method:'get',  headers: {'Content-Type': 'application/json'}})
-    .then(response => response.json())
-    .then(response => {
-      this.setState ({
-        favorites: response
-      })
-    })
-  }
 
   addToFavorites() {
 
@@ -142,24 +125,28 @@ class Pageroutes extends Component {
 
       })
       alert("The route add to favorites successfully!")
-
   }
-
-
   deleteFavorite(){
-    let favor = this.state.favorites.find(favor => favor.routeId == this.props.match.params.id && favor.userId == Number(localStorage.getItem('id')));
-    console.log(favor)
-    if(favor){
-      console.log(favor)
-      fetch( 'http://localhost:5000/favorites/'+ favor.id, {method:'delete', headers: {'Content-Type': 'application/json'}} )
-    }
-  }
-  Refresh(){
-    let route = this.state.routes.find(route => route.id == this.props.match.params.id && route.userId == Number(localStorage.getItem('id')));
-    if(route){
 
-    }
+    fetch( 'http://localhost:5000/favorites?routeId='+ this.state.id, {method:'get', headers: {'Content-Type': 'application/json'}} )
+    .then(response => response.json())
+    .then( (response) => {
+      fetch ( 'http://localhost:5000/favorites/'+ response.id, {method:'delete', headers: {'Content-Type': 'application/json'}} )
+    });
   }
+
+/*  GetFavorites() {
+      fetch('http://localhost:5000/routes?userId='+ localStorage.id, {method:'get',  routeId: that.state.id, headers: {'Content-Type': 'application/json'}});
+
+      .then(response => response.json())
+      .then(response => {
+        this.setState ({
+          favorites: response
+        })
+      })
+  }*/
+
+
 
   render() {
 
@@ -181,6 +168,8 @@ class Pageroutes extends Component {
       )
     })
 
+
+    /*const routes*/
     return (
 
       <div className="container-fluid">
@@ -200,38 +189,28 @@ class Pageroutes extends Component {
                 ) }
                   <div id="googleMap" className="googleMap"></div><br/>
                     <div className="comment col-centered">
-                      { localStorage.getItem('id') ? (
-                        <div>
-                          <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>My comment</ControlLabel>
-                            <FormControl
-                            defaultValue={this.state.description}
-                            onChange={(event) => this.setState({ description: event.target.value })}
-                            componentClass="textarea"
-                            placeholder="Your comment must be here" />
-                          </FormGroup>
-                          <SplitButton title="Rating" onSelect={(eventKey) => { console.log(eventKey, 'comment'); this.setState({ rating: eventKey }); }} pullRight id="split-button-pull-left">
-                            { [1,2,3,4,5,6,7,8,9,10].map((rating, index) => (
-                              <MenuItem key={index} eventKey={rating}>{rating}</MenuItem>
-                            )) }
-                          </SplitButton>
-                          <ButtonToolbar>
-                            <Button bsStyle="primary" bsSize="large" active onClick={this.Createcomments.bind(this)}>Send comment</Button>
-                          </ButtonToolbar>
-                          <ButtonToolbar>
-                            <Button bsStyle="primary" bsSize="large" active onClick={this.addToFavorites.bind(this)}>Add to favorites</Button>
-                          </ButtonToolbar>
-                          <ButtonToolbar>
-                            <Button bsStyle="primary" bsSize="large" active onClick={this.deleteFavorite.bind(this)}>Delete favorite</Button>
-                          </ButtonToolbar>
-                          <ButtonToolbar>
-                            <Button bsStyle="primary" bsSize="large" active onClick={() => store.dispatch(push('/refreshroute/' + this.state.route.id))}>Refresh route</Button>
-                          </ButtonToolbar>
-                        </div>
-
-                      ) : (
-                      <span><h2>Sorry, but you must authorization to sending comment</h2></span>
-                      ) }
+                      <FormGroup controlId="formControlsTextarea">
+                        <ControlLabel>My comment</ControlLabel>
+                        <FormControl
+                        defaultValue={this.state.description}
+                        onChange={(event) => this.setState({ description: event.target.value })}
+                        componentClass="textarea"
+                        placeholder="Your comment must be here" />
+                      </FormGroup>
+                      <SplitButton title="Rating" onSelect={(eventKey) => { console.log(eventKey, 'comment'); this.setState({ rating: eventKey }); }} pullRight id="split-button-pull-left">
+                        { [1,2,3,4,5,6,7,8,9,10].map((rating, index) => (
+                          <MenuItem key={index} eventKey={rating}>{rating}</MenuItem>
+                        )) }
+                      </SplitButton>
+                      <ButtonToolbar>
+                        <Button bsStyle="primary" bsSize="large" active onClick={this.Createcomments.bind(this)}>send comment</Button>
+                      </ButtonToolbar>
+                      <ButtonToolbar>
+                        <Button bsStyle="primary" bsSize="large" active onClick={this.addToFavorites.bind(this)}>Add to favorites</Button>
+                      </ButtonToolbar>
+                      <ButtonToolbar>
+                        <Button bsStyle="primary" bsSize="large" active onClick={this.deleteFavorite.bind(this)}>Delete favorite</Button>
+                      </ButtonToolbar>
                     </div>
                     <div className="esr">
                       <h2>Comments:</h2>

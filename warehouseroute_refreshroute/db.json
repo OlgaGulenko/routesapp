@@ -65,22 +65,25 @@
   "routes": [
     {
       "id": 1,
-      "name": "qweruyt",
-      "description": "wertyu",
+      "name": "Awesome route",
+      "description": "desc",
       "categoryId": 1,
-      "length": 875787.526327079,
+      "length": 50555,
       "route": [
         {
-          "lat": 61.01572481397616,
-          "lng": 48.515625
+          "lat": 40.13123,
+          "lng": 56.52342
         },
         {
-          "lat": 53.748710796898976,
-          "lng": 42.890625
+          "lat": 49.25422,
+          "lng": 32.03432
+        },
+        {
+          "lat": 40.13123,
+          "lng": 56.52342
         }
       ],
-      "userId": 9,
-      "categories": 2
+      "userId": 9
     },
     {
       "id": 2,

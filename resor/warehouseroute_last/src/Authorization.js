@@ -35,12 +35,10 @@ class Authorization extends Component{
     .then(response => response.json())
     .then(response => {
       if(response!=""){
-
+      store.dispatch(push('/users/'+ response[0].id))
       localStorage.setItem('email', this.state.email);
       localStorage.setItem('password', this.state.password);
       localStorage.setItem('id', response[0].id);
-
-      store.dispatch(push('/users/'+ response[0].id))
     }
     else {
         alert("Incorrect email or password!")

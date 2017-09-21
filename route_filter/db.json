@@ -65,22 +65,25 @@
   "routes": [
     {
       "id": 1,
-      "name": "qweruyt",
-      "description": "wertyu",
+      "name": "Awesome route",
+      "description": "desc",
       "categoryId": 1,
-      "length": 875787.526327079,
+      "length": 50555,
       "route": [
         {
-          "lat": 61.01572481397616,
-          "lng": 48.515625
+          "lat": 40.13123,
+          "lng": 56.52342
         },
         {
-          "lat": 53.748710796898976,
-          "lng": 42.890625
+          "lat": 49.25422,
+          "lng": 32.03432
+        },
+        {
+          "lat": 40.13123,
+          "lng": 56.52342
         }
       ],
-      "userId": 9,
-      "categories": 2
+      "userId": 9
     },
     {
       "id": 2,
@@ -403,24 +406,6 @@
       "categories": 1,
       "userId": 11,
       "id": 20
-    },
-    {
-      "name": "qwerty",
-      "description": "qwertyuiotyui",
-      "length": 549476.3624434664,
-      "route": [
-        {
-          "lat": 49.38237278700955,
-          "lng": 64.16015625
-        },
-        {
-          "lat": 45.27488643704892,
-          "lng": 68.203125
-        }
-      ],
-      "categories": 1,
-      "userId": 9,
-      "id": 21
     }
   ],
   "comments": [
@@ -512,60 +497,43 @@
       "rating": 3,
       "description": "ertyu",
       "id": 21
-    },
-    {
-      "userId": 9,
-      "rating": "",
-      "description": "",
-      "id": 22
-    },
-    {
-      "userId": 9,
-      "rating": 4,
-      "description": "qwerti",
-      "id": 23
-    },
-    {
-      "userId": 9,
-      "rating": 3,
-      "description": "1234",
-      "id": 24
-    },
-    {
-      "userId": 9,
-      "rating": 2,
-      "description": "werty",
-      "id": 25
-    },
-    {
-      "userId": 9,
-      "rating": 2,
-      "description": "wery",
-      "id": 26
-    },
-    {
-      "userId": 9,
-      "rating": 4,
-      "description": "qwerty",
-      "id": 27
-    },
-    {
-      "userId": 9,
-      "rating": 9,
-      "description": "qwertyu",
-      "id": 28
     }
   ],
   "favorites": [
     {
+      "id": 1,
       "userId": 1,
-      "routeId": 1,
-      "id": 1
+      "routeId": 1
     },
     {
       "userId": 9,
       "routeId": 1,
-      "id": 2
+      "id": 4
+    },
+    {
+      "userId": 9,
+      "routeId": 1,
+      "id": 5
+    },
+    {
+      "userId": 11,
+      "routeId": 1,
+      "id": 6
+    },
+    {
+      "userId": 9,
+      "routeId": 1,
+      "id": 7
+    },
+    {
+      "userId": 9,
+      "routeId": 1,
+      "id": 8
+    },
+    {
+      "userId": 11,
+      "routeId": 1,
+      "id": 9
     }
   ]
 }

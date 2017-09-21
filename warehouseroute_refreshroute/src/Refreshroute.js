@@ -16,7 +16,7 @@ GoogleMapsLoader.load(function(googleAPI) {
   google = googleAPI;
 });
 
-class Createroutes extends Component{
+class Refreshroute extends Component{
 
   constructor(props){
     super(props);
@@ -42,26 +42,11 @@ class Createroutes extends Component{
       length:'',
       allow: 1,
       userId:'',
-
-
     }
     this.positions=[]
   }
 
-onMyChange(e){
-  switch (e.target.name)
-  {
-    case 'name':
-        this.setState({login:e.target.value});
-      break;
-    case 'length':
-        this.setState({len:e.target.value});
-      break;
-    case 'description':
-        this.setState({pass:e.target.value});
-      break;
-  }
-}
+
 Createmaproutes(){
 
   let rou = JSON.stringify({
@@ -104,12 +89,6 @@ Createmaproutes(){
 
         });
       }
-        /*let bounds = new google.maps.LatLngBounds(
-          marker1.getPosition(), marker2.getPosition());
-        this.map.fitBounds(bounds);
-
-        google.maps.event.addListener(marker1, 'position_changed', Update);
-        google.maps.event.addListener(marker2, 'position_changed', Update);*/
 
       let polyl = new this.google.maps.Polyline({
         categories:route.categories,
@@ -124,42 +103,9 @@ Createmaproutes(){
     });
 
   });
-/*  Update();*/
 }
 
-/*Update = () => {
-  let path = [marker1.getPosition(), marker2.getPosition()];
-  // polyl.setPath(path);
-  let heading = google.maps.geometry.spherical.computeHeading(path[0], path[1]);
-  document.getElementById('heading').value = heading;
-  document.getElementById('origin').value = path[0].toString();
-  document.getElementById('destination').value = path[1].toString();
-}*/
-Createroutes(){
-  let route = this.positions.map((position) => {
-    return position
-  })
-
-  let rou = JSON.stringify({
-    name:this.state.name ,
-    description: this.state.description,
-    length: this.state.length,
-    route: route,
-    categories:this.state.categoryid,
-    userId: Number(localStorage.getItem('id')),
-  })
-
-  fetch( 'http://localhost:5000/routes/', {method:'post', body:rou, headers: {'Content-Type': 'application/json'}} )
-
-  .then(response => response.json())
-  .then(response => {
-    console.log(response)
-    this.setState ({
-      routes: response
-    })
-  })
-}
-/*Refreshroutes(){
+Refreshroutes(){
   let route = this.positions.map((position) => {
     return position
   })
@@ -182,14 +128,7 @@ Createroutes(){
     })
   })
 }
-$.ajax('http://jsonplaceholder.typicode.com/posts/1', {
-  method: 'PATCH',
-  data: {
-    title: 'foo'
-  }
-}).then(function(data) {
-  console.log(data);
-});*/
+
 componentDidMount(){
   GoogleMapsLoader.load(function(google) {
     this.google = google;
@@ -280,9 +219,8 @@ componentDidMount(){
                   </SplitButton>
                   <div id="googleMap" className="googleMap"></div>
                   <ButtonToolbar>
-                    <Button bsStyle="primary" bsSize="large" active onClick={this.Createroutes.bind(this)}>Create route</Button>
+                    <Button bsStyle="primary" bsSize="large" active onClick={this.Refreshroutes.bind(this)}>Refreshroutes</Button>
                   </ButtonToolbar>
-
                 </div>
               </Col>
             </Row>
@@ -292,4 +230,4 @@ componentDidMount(){
     }
 };
 
-export default Createroutes;
+export default Refreshroute;
